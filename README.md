@@ -1,1 +1,4 @@
 # Catalog API
+
+ * eBay
+ * Amazon

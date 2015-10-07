@@ -1,0 +1,120 @@
+{
+    "Timestamp":"2014-02-24T13:21:28.946Z",
+    "Ack":"Success",
+    "Build":"E861_CORE_APILW_16677026_R1",
+    "Version":"861",
+    "Item":
+    {
+        "BestOfferEnabled":false,
+        "Description":" <!-- Start of Webstore --><!-- #curr_date#2013-10-28 09:13:18# #Version#1.0# --><div id=\"flashContent\" style=\"text-align:center;\"><script language=\"JavaScript\" type=\"text/javascript\"> var urlAddress = location.search; var frame = urlAddress.indexOf(\"ItemDescV4\");if(frame < 0)     { var hashSpot = urlAddress.indexOf(\"hash=item\"); if(hashSpot > -1) { var urlAddress = location.pathname; var slashSpot = urlAddress.lastIndexOf(\"/\"); var ebayItemID = urlAddress.substring(slashSpot+1); } else { var itemFound = urlAddress.indexOf(\"item=\"); var ebayItemID = urlAddress.substring(itemFound+5); var amperSpot = ebayItemID.indexOf(\"&\"); if(amperSpot > -1) {ebayItemID = ebayItemID.substring(0,amperSpot)}; } } var seller; if (typeof sellerId === \"undefined\") { seller = \"garrett2261\"; } else {seller=sellerId;}var flash_code='<div style=\"text-align:center; width:100%; height:35px;\"><object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" width=\"100%\" height=\"100%\" id=\"translation_widget\" align=\"middle\"><param name=\"movie\" value=\"http://static.3dsellers.com/webstoreplace/flash/webstoreplace_flash.swf\" /><param name=\"FlashVars\" value=\"sellerId='+seller+'&itemId='+ebayItemID+'\" /><param name=\"allowScriptAccess\" value=\"always\" /><param name=\"wmode\" value=\"transparent\"><!--[if !IE]>--><object type=\"application/x-shockwave-flash\" data=\"http://static.3dsellers.com/webstoreplace/flash/webstoreplace_flash.swf\" width=\"100%\" height=\"100%\"><param name=\"movie\" value=\"http://static.3dsellers.com/webstoreplace/flash/webstoreplace_flash.swf\" /><param name=\"FlashVars\" value=\"sellerId='+seller+'&itemId='+ebayItemID+'\" /><param name=\"allowScriptAccess\" value=\"always\" /><param name=\"wmode\" value=\"transparent\"><\/object><!--<![endif]--><\/object><\/div>';\ndocument.write(flash_code); <\/script><\/div><!-- End of Webstore --><div align=\"center\"><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>KT CLASSICS MEN'S POLO SHIRT<\/b><\/i><\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>6 Different Designs : Choose from Drop Down Menu<\/b><\/i><\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>Sizes: Medium, Large, or Extra Large<\/b><\/i><\/font><\/font><\/font><br><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>Medium:<\/b><\/i><\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">Armpit to armpit is 23\" unstretched &amp; from the shoulder down to the hem is 28\" unstretched<\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>Large:<\/b><\/i><\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">Armpit to armpit is 24\" unstretched &amp; from the shoulder down to the hem is 28.5\" unstretched<\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><i><b>Extra Large:<\/b><\/i><\/font><\/font><\/font><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">Armpit to armpit is 26\" unstretched &amp; from the shoulder down to the hem is 31\" unstretched<\/font><\/font><\/font><\/font><\/font><\/font><br><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">60% Cotton<\/font><\/font><\/font><\/font><\/font><\/font>&nbsp; <font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">40% Polyester<\/font><\/font><\/font><\/font><\/font><\/font><br><br><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\"><font size=\"6\"><font face=\"Comic Sans MS\"><font size=\"5\">New with Tags<\/font><\/font><\/font><\/font><\/font><\/font><br><\/div>\n<p><center><a href=\"http://pages.ebay.com/selling_manager_pro\"><img border=\"0\" height=\"50\" width=\"248\" src=\"http://pics.ebay.com/aw/pics/sellingmanager/sellingmanagerPro/smPro_248x50.gif\"><\/a><\/center><\/p><br><br><br>\n<!--BEGIN inkFrog SmartCounters-->\n<!-- this tag was added on 1374404044 -->\n<center><script type=\"text/javascript\">\nvar loc =(document.location); var loc2 =loc.toString();\nvar tempid=''; var myebayItemID=''; var chlen=0;\nfor (i=0; i<loc2.length; i++) { ch = loc2.charAt(i); if (ch >= '0' && ch<='9') {\n tempid=tempid+ch; chlen=chlen+1; }\n else { if (chlen >= 11 && chlen <=15 ) { var myebayItemID=tempid; i=loc2.length; } tempid=''; } }\nvar ns='';\niqx = myebayItemID;\nif ( !iqx ) { iqx = '300937379040'; }\nlgx = (navigator.language||navigator.browserLanguage).substr(0,2); var r=document.referrer;\nfor (i=0; i<r.length; i++) { ch = r.charAt(i); if (ch == '&') { ch='%26' } ns=ns+ch; }\nvar ag=navigator.userAgent; var ua='';\nfor (i=0; i<ag.length; i++) { ch = ag.charAt(i); if (ch == '&') { ch='%26' }\nif (ch == ' ') { ch='+' } ua=ua+ch; }\nurl='http://sm-stats.inkfrog.com/px.php?sqx=100540206&iqx='+iqx+'&lgx=';\nurl=url+lgx+'&hqx=%2Fws%2FeBayISAPI.dll%3FViewItem%26item%3D'+iqx+'&uqx='+ua+'&rqx='+ns;\nvar str='<a target=new href=\"http://www.inkfrog.com/analytics/?f=1&itemno='+iqx+'\"><img border=\"0\" width=\"1\" height=\"1\" bordercolor=\"#555555\"';\nstr=str+' src=\"'+url+'\"><\/a>'; document.write(str);\n<\/script>\n\n<br>\n<p style=\"font-size: 8pt; color: #ffffff\" style=\"display: none;\">inkFrog Analytics<\/p>\n<\/center>\n<!--END inkFrog SmartCounters-->\n ",
+        "ItemID":"300937379040",
+        "EndTime":"2014-03-18T10:52:29.000Z",
+        "StartTime":"2013-07-21T10:52:29.000Z",
+        "ViewItemURLForNaturalSearch":"http://www.ebay.com/itm/NWT-KT-CLASSICS-Mens-Short-Sleeve-Polo-Shirt-Top-Size-M-L-XL-/300937379040?var=",
+        "ListingType":"FixedPriceItem",
+        "Location":"Dunedin, Florida",
+        "PaymentMethods":["PayPal"],
+        "PictureURL":["http://i.ebayimg.com/00/s/MTI4MFgxNjAw/z/m1EAAOxyzxJR67lg/$T2eC16F,!ykE9s7twBM+BR67lf6mC!~~60_1.JPG?set_id=880000500F"],
+        "PostalCode":"34698",
+        "PrimaryCategoryID":"57990",
+        "PrimaryCategoryName":"Clothing, Shoes & Accessories:Men's Clothing:Casual Shirts",
+        "Quantity":7,
+        "Seller":
+        {
+            "UserID":"garrett2261",
+            "FeedbackRatingStar":"YellowShooting",
+            "FeedbackScore":13517,
+            "PositiveFeedbackPercent":99.8,
+            "TopRatedSeller":true
+        },
+        "BidCount":0,
+        "ConvertedCurrentPrice":
+        {
+            "Value":9.99,
+            "CurrencyID":"USD"
+        },
+        "CurrentPrice":
+        {
+            "Value":9.99,
+            "CurrencyID":"USD"
+        },
+        "ListingStatus":"Active",
+        "QuantitySold":3,
+        "ShipToLocations":["Worldwide"],
+        "Site":"US",
+        "TimeLeft":"P21DT21H31M1S",
+        "Title":"NWT KT CLASSICS Mens Short Sleeve Polo Shirt Top Size M L XL",
+        "ShippingCostSummary":
+        {
+            "ShippingServiceCost":
+            {
+                "Value":0.0,
+                "CurrencyID":"USD"
+            },
+            "ShippingType":"Calculated",
+            "ListedShippingServiceCost":
+            {
+                "Value":0.0,
+                "CurrencyID":"USD"
+            }
+        },
+        "ItemSpecifics":
+        {
+            "NameValueList":[
+                {
+                    "Name":"Brand",
+                    "Value":["KT Classics"]
+                },
+                {
+                    "Name":"Style",
+                    "Value":["Polo, Rugby"]
+                },
+                {
+                    "Name":"Sleeve Length",
+                    "Value":["Short Sleeve"]
+                },
+                {
+                    "Name":"Material",
+                    "Value":["Cotton Blend"]
+                },
+                {
+                    "Name":"Color",
+                    "Value":["Multi-Color"]
+                },
+                {
+                    "Name":"Country of Manufacture",
+                    "Value":["China"]
+                }
+            ]
+        },
+        "HitCount":235,
+        "PrimaryCategoryIDPath":"11450:1059:57990",
+        "Storefront":
+        {
+            "StoreURL":"http://stores.ebay.com/id=71229449",
+            "StoreName":"Felonious Deals"
+        },
+        "Country":"US",
+        "ReturnPolicy":
+        {
+            "Refund":"Money back or exchange (buyer's choice)",
+            "ReturnsWithin":"14 Days",
+            "ReturnsAccepted":"Returns Accepted",
+            "Description":"Restocking fee: No",
+            "ShippingCostPaidBy":"Buyer",
+            "RestockingFeeValue":"No",
+            "RestockingFeeValueOption":"NoRestockingFee"
+        },
+        "AutoPay":false,
+        "PaymentAllowedSite":[],
+        "IntegratedMerchantCreditCardEnabled":false,
+        "HandlingTime":1,
+        "ConditionID":1000,
+        "ConditionDisplayName":"New with tags",
+        "ExcludeShipToLocation":["BR"],
+        "TopRatedListing":true,
+        "GlobalShipping":true,
+        "QuantitySoldByPickupInStore":0,
+        "NewBestOffer":false
+    }
+}

@@ -1,0 +1,8 @@
+composer.lock
+vendor/
+www/
+tmp/
+.idea/
+app/Controllers/
+app/Bootstrap.php
+public/

@@ -21,6 +21,11 @@ class ItemList
         if (!isset($response['item'])) {
             return;
         }
+
+        if ($response['@count'] == 1) {
+            $response['item'] = [$response['item']];
+        }
+
         foreach ($response['item'] as $item) {
             $this->validation($item);
             $this->result[] = new ProductShortInfo($item);

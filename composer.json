@@ -1,7 +1,7 @@
 {
     "name": "meniam/catalog-api",
     "description": "Catalog API client",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "keywords": ["ebay", "amazon", "api", "php", "client"],
     "homepage": "https://github.com/meniam/catalog-api",
     "license":  "MIT",

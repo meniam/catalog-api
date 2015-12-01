@@ -76,6 +76,20 @@ class Client
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
+    public function getCategories($countryShortName = 'US')
+    {
+        $response = $this->callXml('GetCategories', self::TRADING_URL, [
+            'DetailLevel' => 'ReturnAll',
+            'siteId' => $this->getCountryCodeByShortName($countryShortName),
+        ]);
+
+        if (!isset($response['CategoryArray'])) {
+            throw new EmptyRequest('Response is empty.');
+        }
+
+        return $response;
+    }
+
     public function getProduct($id, $countryShortName = 'US')
     {
         $request = new Request($this->httpClient, $this->keys);
@@ -381,6 +395,16 @@ class Client
     {
         $request = new Request($this->httpClient, $this->keys);
         $response = $request->perform($url, $params);
+        if ($decode) {
+            $response =  $this->decode($response->getContent());
+        }
+        return $response;
+    }
+
+    private function callXml($method, $url, $params, $decode = true)
+    {
+        $request = new Request($this->httpClient, $this->keys);
+        $response = $request->performXml($method, $url, $params);
         if ($decode) {
             $response =  $this->decode($response->getContent());
         }

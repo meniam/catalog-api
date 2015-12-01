@@ -17,10 +17,50 @@ class Request extends \Catalog\Request
         $this->params = $params;
         $this->httpClient->getClient()->setTimeout(self::MAX_TIMEOUT);
         $query = str_replace('%25APP_ID%25', $this->key['appId'], http_build_query($params));
+
         if (!isset($params['siteId'])) {
             return $this->httpClient->get($url . $query);
         }
+
         return $this->httpClient->get($url . $query, $this->buildHeaders());
+    }
+
+    public function performXml($method, $url, $params)
+    {
+        parent::prepare();
+        $this->params = $params;
+        $this->httpClient->getClient()->setTimeout(self::MAX_TIMEOUT);
+
+        $params['RequesterCredentials'] = array('eBayAuthToken' => $this->key['token']);
+
+        $xml = new \SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?>' . "<{$method}Request/>");
+        $xml->addAttribute('xmlns', 'urn:ebay:apis:eBLBaseComponents');
+        self::arrayToXml($params, $xml);
+
+        $this->params['callname'] = $method;
+
+        return $this->httpClient->post($url, $this->buildHeaders(), $xml->asXml());
+    }
+
+    /**
+     * Получить xml из масива
+     *
+     * @param array $array
+     * @param \SimpleXMLElement $xml
+     */
+    public static function arrayToXml($array, &$xml) {
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                if (!is_numeric($key)) {
+                    $subnode = $xml->addChild("$key");
+                    self::arrayToXml($value, $subnode);
+                } else {
+                    self::arrayToXml($value, $xml);
+                }
+            } else {
+                $xml->addChild("$key", "$value");
+            }
+        }
     }
 
     public function performParallel(array $requests)
@@ -43,14 +83,16 @@ class Request extends \Catalog\Request
 
     private function buildHeaders()
     {
-        return array(
+         $params = [
             'X-EBAY-API-COMPATIBILITY-LEVEL' => self::API_COMPATIBILITY_LEVEL,
             'X-EBAY-API-DEV-NAME' => $this->key['developerId'],
             'X-EBAY-API-APP-NAME' => $this->key['appId'],
             'X-EBAY-API-CERT-NAME' => $this->key['certificateId'],
             'X-EBAY-API-CALL-NAME' => $this->params['callname'],
             'X-EBAY-API-SITEID' => $this->params['siteId']
-        );
+        ];
+
+        return $params;
     }
 
     private function convertHeaders($headers)

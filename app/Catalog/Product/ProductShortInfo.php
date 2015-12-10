@@ -17,6 +17,7 @@ class ProductShortInfo extends EbayProductCreator
     private $bidCount;
     private $isAuction;
     private $shippingPrice;
+    private $endDate;
 
     private $globalIds = [
         'EBAY-MOTOR' => 'MOTORS',
@@ -57,6 +58,8 @@ class ProductShortInfo extends EbayProductCreator
         if (isset($item['listingInfo']['listingType']) && $item['listingInfo']['listingType'] == 'Auction') {
             $this->isAuction = true;
         }
+
+        $this->endDate = new \DateTime($item['listingInfo']['endTime']);
         $this->setShippingCost($item);
     }
 
@@ -74,6 +77,14 @@ class ProductShortInfo extends EbayProductCreator
     public function getCurrency()
     {
         return $this->currency;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
     }
 
     /**

@@ -229,15 +229,14 @@ class Client
         return (new Seller($response['User']));
     }
 
-
-    public function getShipping($id, InfoForShippingApi $infoForShipping, $amount = 1)
+    public function getShippingByCountryAndPostalCode($id, $country, $postalCode, $amount = 1)
     {
         $response = $this->call(self::SHOPPING_URL, [
             "callname" => "GetShippingCosts",
             "responseencoding" => "XML",
             "appid" => '%APP_ID%',
-            "DestinationCountryCode" => $infoForShipping->getCountryShortName(),
-            "destinationZipCode" => $infoForShipping->getPostalCode(),
+            "DestinationCountryCode" => $country,
+            "destinationZipCode" => $postalCode,
             "QuantitySold" => $amount,
             "version" => self::SHOPPING_API_VERSION,
             "ItemID" => $id]);
@@ -258,23 +257,23 @@ class Client
         }
         $shipping = (new Attributes())->getShippingCostSummaryForTrading($response['ShippingCostSummary']);
         if ($shipping->getType() == self::CALCULATED) {
-            $shipping = $this->getCalculated($id, $infoForShipping, $amount);
+            $shipping = $this->getCalculatedShippingByCountryAndPostalCode($id, $country, $postalCode, $amount);
         }
         return $shipping;
     }
 
-    public function getCalculated($id, InfoForShippingApi $infoForShipping, $amount = 1)
+    public function getCalculatedShippingByCountryAndPostalCode($id, $country, $postalCode, $amount = 1)
     {
         $price = null;
         $currency = null;
         $name = null;
         $response = $this->call(
-            sprintf(self::CALCULATED_URL, $this->getSubdomainForUrlCarculated($infoForShipping->getCountryShortName())),
+            sprintf(self::CALCULATED_URL, $this->getSubdomainForUrlCarculated($country)),
             [
                 'itemId' =>  $id,
-                'destinationCountry' => $infoForShipping->getCountryShortName(),
+                'destinationCountry' => $country,
                 'quantity' => $amount,
-                'destinationZipCode' => $infoForShipping->getPostalCode(),
+                'destinationZipCode' => $postalCode,
                 'intl' => 'true',
                 'Calculate' => 1,
                 'transactionid' => 0
@@ -296,6 +295,16 @@ class Client
                 'ShippingServiceName' => $name
             ]
         );
+    }
+
+    public function getShipping($id, InfoForShippingApi $infoForShipping, $amount = 1)
+    {
+        return $this->getShippingByCountryAndPostalCode($id, $infoForShipping->getCountryShortName(), $infoForShipping->getPostalCode(), $amount);
+    }
+
+    public function getCalculated($id, InfoForShippingApi $infoForShipping, $amount = 1)
+    {
+        return $this->getCalculatedShippingByCountryAndPostalCode($id, $infoForShipping->getCountryShortName(), $infoForShipping->getPostalCode(), $amount);
     }
 
     public function findProducts(SearchCondition $condition)

@@ -71,7 +71,7 @@ class Request extends \Catalog\Request
             $key = $this->getRandomKey();
             $query = str_replace('%25APP_ID%25', $key['appId'], http_build_query($options['params']));
             $subrequest = $multirequest->get($options['url'] . $query);
-            if (isset($params['siteId'])) {
+            if (isset($options['params']['siteid'])) {
                 $subrequest
                     ->withHeaders($this->convertHeaders($this->buildHeaders()))
                     ->viaProxy($this->getRandomProxy());

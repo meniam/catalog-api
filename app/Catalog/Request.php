@@ -34,7 +34,7 @@ class Request
     public function prepare()
     {
         $this->key = $this->getRandomKey();
-        //$this->httpClient->getClient()->setProxy($this->getRandomProxy());
+        $this->httpClient->getClient()->setProxy($this->getRandomProxy());
     }
 
     protected function getRandomKey()

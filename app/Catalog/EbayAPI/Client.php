@@ -106,33 +106,33 @@ class Client
                     'IncludeSelector' => implode(',', array_merge(['Description'], $this->defaultProductSelectors))
                 ]
             ],
-            'with_text_description' => [
-                'url' => self::SHOPPING_URL,
-                'params' => [
-                    'callname' => 'GetSingleItem',
-                    'responseencoding' => 'XML',
-                    'appid' => '%APP_ID%',
-                    'siteid' => $this->getCountryCodeByShortName($countryShortName),
-                    'version' => self::SHOPPING_API_VERSION,
-                    'ItemID' => $id,
-                    'IncludeSelector' => 'TextDescription'
-                ]
-            ]
+//            'with_text_description' => [
+//                'url' => self::SHOPPING_URL,
+//                'params' => [
+//                    'callname' => 'GetSingleItem',
+//                    'responseencoding' => 'XML',
+//                    'appid' => '%APP_ID%',
+//                    'siteid' => $this->getCountryCodeByShortName($countryShortName),
+//                    'version' => self::SHOPPING_API_VERSION,
+//                    'ItemID' => $id,
+//                    'IncludeSelector' => 'TextDescription'
+//                ]
+//            ]
         ]);
         try {
             $responseWithDescription = $this->decode($responses['with_description']);
-            $responseWithTextDescription = $this->decode($responses['with_text_description']);
+            //$responseWithTextDescription = $this->decode($responses['with_text_description']);
         } catch (ApiError $e) {
             throw new ApiError('Product' . $id . "\n" . $e->getMessage());
         }
-        if (!isset($responseWithDescription['Item']) || !isset($responseWithTextDescription['Item'])) {
+        if (!isset($responseWithDescription['Item'])/* || !isset($responseWithTextDescription['Item'])*/) {
             throw new EmptyRequest('Response is empty.');
         }
         $response = $responseWithDescription;
         $response['Item']['TextDescription'] = '';
-        if (isset($responseWithTextDescription['Item']['Description'])) {
-            $response['Item']['TextDescription'] = $responseWithTextDescription['Item']['Description'];
-        }
+//        if (isset($responseWithTextDescription['Item']['Description'])) {
+//            $response['Item']['TextDescription'] = $responseWithTextDescription['Item']['Description'];
+//        }
         return (new Single($response['Item']))->parse();
     }
 
